@@ -57,8 +57,8 @@ function lowpass1orderfilt(dt, stepno, filt, x)
          filt%y1_old = filt%y1
       endif
       tau = filt%tau
-      a1 = (2.0_mk*tau - dt) / (2.0_mk*tau + dt)
-      b0 = dt / (2.0_mk*tau + dt)
+      a1 = (2.0_mk/tau - dt) / (2.0_mk/tau + dt)
+      b0 = dt / (2.0_mk/tau + dt)
       b1 = b0
       y = a1*filt%y1_old + b0*x + b1*filt%x1_old
    endif
